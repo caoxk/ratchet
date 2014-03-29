@@ -74,6 +74,7 @@
     var toggleWidth = toggle.clientWidth;
     var handleWidth = handle.clientWidth;
     var offset      = toggleWidth - handleWidth;
+    var ret;
 
     touchMove = true;
     distanceX = current.pageX - start.pageX;
@@ -85,10 +86,12 @@
     e.preventDefault();
 
     if (distanceX < 0) {
-      return (handle.style[transformProperty] = 'translate3d(0,0,0)');
+      ret = handle.style[transformProperty] = 'translate3d(0,0,0)';
+      return ret;
     }
     if (distanceX > offset) {
-      return (handle.style[transformProperty] = 'translate3d(' + offset + 'px,0,0)');
+      ret = handle.style[transformProperty] = 'translate3d(' + offset + 'px,0,0)';
+      return ret;
     }
 
     handle.style[transformProperty] = 'translate3d(' + distanceX + 'px,0,0)';
