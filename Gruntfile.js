@@ -56,10 +56,6 @@ module.exports = function(grunt) {
           'js/toggles.js'
         ],
         dest: '<%= meta.distPath %>js/<%= pkg.name %>.js'
-      },
-      docs: {
-        src: '<%= meta.distPath %>js/<%= pkg.name %>.js',
-        dest: '<%= meta.docsPath %>js/<%= pkg.name %>.js'
       }
     },
 
