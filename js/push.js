@@ -64,7 +64,7 @@
     cacheMapping.cacheBackStack    = JSON.stringify(cacheBackStack);
   };
 
-  var cachePop = function (id, direction) {
+  var cachePop = function (direction) {
     var forward           = direction === 'forward';
     var cacheForwardStack = JSON.parse(cacheMapping.cacheForwardStack || '[]');
     var cacheBackStack    = JSON.parse(cacheMapping.cacheBackStack    || '[]');
@@ -139,7 +139,7 @@
 
     direction = PUSH.id < id ? 'forward' : 'back';
 
-    cachePop(id, direction);
+    cachePop(direction);
 
     activeObj = getCached(id);
     activeDom = domCache[id];
